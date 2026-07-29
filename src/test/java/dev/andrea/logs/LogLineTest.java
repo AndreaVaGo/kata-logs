@@ -22,4 +22,10 @@ public class LogLineTest {
         LogLine logLine = new LogLine("[XYZ]: Overly specific, out of context message");
         assertEquals(LogLevel.UNKNOWN, logLine.getLogLevel());
     }
+
+    @Test
+    void shouldReturnShortLog() {
+        LogLine logLine = new LogLine("[ERR]: Stack Overflow");
+        assertEquals("6:Stack Overflow", logLine.getOutputForShortLog());
+    }
 }

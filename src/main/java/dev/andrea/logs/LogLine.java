@@ -20,4 +20,11 @@ public class LogLine {
         return LogLevel.UNKNOWN;
     }
 
+    public String getOutputForShortLog() {
+        int encodedLevel = getLogLevel().getValor();
+        String message = line.substring(7);
+
+        return encodedLevel + ":" +  message;
+    }
+
 }
