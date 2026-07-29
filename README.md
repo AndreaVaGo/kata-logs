@@ -1,7 +1,5 @@
 # Kata Logs
 
-Kata de Java del **Exercism Track**, centrada en el uso de `enum` para modelar un conjunto fijo de constantes. Resuelto aplicando TDD (ciclo Red-Green-Refactor) con JUnit 5.
-
 🔗 [Repositorio](https://github.com/AndreaVaGo/kata-logs)
 🔗 [Ejercicio original en Exercism](https://exercism.org/tracks/java)
 
@@ -80,14 +78,20 @@ logLine.getOutputForShortLog();
 
   **Nota de diseño:** se evitó deliberadamente el uso de `switch` para la búsqueda del nivel, resolviéndolo mediante iteración sobre los valores del enum en su lugar.
 
-## 🧪 Tests
+## 🧪 Testing & Coverage
 
 - **Test parametrizado** (`@ParameterizedTest` + `@MethodSource`): cubre los 7 niveles de log (los 6 reales + `UNKNOWN`) en un único método, evitando repetir 7 tests casi idénticos.
 - **Test específico** para `getOutputForShortLog()`, verificando el formato corto completo.
 
-10/10 tests en verde:
+**10/10 tests en verde:**
 
 ![Tests passing](assets/tests-passing.png)
+
+**Cobertura (JaCoCo):**
+
+![Coverage report](assets/coverage-report.png)
+
+> Reporte HTML completo disponible en `target/site/jacoco/index.html` tras ejecutar `mvn clean test`.
 
 ## ▶️ Cómo ejecutar los tests
 
