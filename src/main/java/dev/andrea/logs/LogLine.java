@@ -21,7 +21,7 @@ public class LogLine {
     }
 
     public String getOutputForShortLog() {
-        int encodedLevel = getLogLevel().getValor();
+        int encodedLevel = getLogLevel().getEncodedValue();
         String message = line.substring(7);
 
         return encodedLevel + ":" +  message;
