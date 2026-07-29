@@ -10,11 +10,15 @@ public enum LogLevel {
     UNKNOWN("", 0);
 
     private final String code;
-    private final int valor;
+    private final int encodedValue;
 
-    private LogLevel(String code, int valor) {
+    private LogLevel(String code, int encodedValue) {
         this.code = code;
-        this.valor = valor;
+        this.encodedValue = encodedValue;
+    }
+
+    public int getEncodedValue() {
+        return encodedValue;
     }
 
     public String getCode() {
