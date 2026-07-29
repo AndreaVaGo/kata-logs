@@ -16,4 +16,10 @@ public class LogLineTest {
         LogLine logLine = new LogLine("[ERR]: Stack Overflow");
         assertEquals(LogLevel.ERROR, logLine.getLogLevel());
     }
+
+    @Test
+    void shouldReturnUnknownLevel() {
+        LogLine logLine = new LogLine("[XYZ]: Overly specific, out of context message");
+        assertEquals(LogLevel.UNKNOWN, logLine.getLogLevel());
+    }
 }
